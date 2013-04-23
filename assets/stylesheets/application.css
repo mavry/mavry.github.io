@@ -6,8 +6,14 @@ body {
   background-size: cover;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .content{
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .well.time-to-destination {
