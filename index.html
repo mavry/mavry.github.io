@@ -7,81 +7,94 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" >
+    <link href="assets/stylesheets/application.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
+      <div class="navbar-inner header-stripe">
         <div class="container">
-          <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse"
-            data-target=".nav-collapse">
-          </button>
-          <a class="brand" href="#">Time2Go</a>
-          <div class="nav-collapse collapse" style="height: 0px;">
-            <ul class="nav">
-              <li class="active">
-              <a href="#">Home</a>
-              </li>
-              <li>
-              <a href="#about">About</a>
-              </li>
-              <li>
-              <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="control-group">
-        <span class="label">From:</span>
-        <div class="controls">
-          <input type="text">
-          <div class="control-group">
-            <span class="label">To:</span>
-            <div class="controls">
-              <input type="text">
+          <div class="pull-center">
+            <div class="offset3">
+              <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse"
+                data-target=".nav-collapse">
+              </button>
+              <a class="brand" href="#">Time2Go</a>
+              <div class="nav-collapse collapse" style="height: 0px;">
+                <ul class="nav">
+                  <li class="active">
+                  <a href="#">Home</a>
+                  </li>
+                  <li>
+                  <a href="#about">About</a>
+                  </li>
+                  <li>
+                  <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <!--/.nav-collapse -->
             </div>
           </div>
         </div>
       </div>
-      <div class="control-group">
-        <div class="controls">
-        </div>
-      </div>
-      <a class="btn">Go</a>
-      <div class="well">
-        <h3>
-          Time to Destination:
-        </h3>
-        <div class="row">
-          <div class="span1">
-            <span class="badge">via</span>
-            <p>
-            2 South
-            </p>
+    </div>
+    <div class="container content">
+      <div class="row">
+        <div class="span6 offset3">
+          <div class="row">
+            <form class="form-horizontal">
+              <div class="control-group">
+                <label class="control-label">From:</label>
+                <div class="controls">
+                  <input type="text" placeholder="Your Location">
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">To:</label>
+                <div class="controls">
+                  <input type="text" placeholder="Destination">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">
+                    Go
+                    <i class="icon-road icon-white"> </i>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="span1">
-            <span class="badge">driving</span>
-            <p>
-            55 min
-            </p>
-          </div>
-          <div class="span1">
-            <span class="badge">updated</span>
-            <p>
-              10:34
-            </p>
-          </div>
-          <div class="span1">
-            <span class="badge badge-success">Time2Go</span>
+          <div class="row">
+            <div class="well time-to-destination">
+              <h3>
+                Time to Destination:
+              </h3>
+              <div class="row">
+                <div class="span1">
+                  <span class="label label-info">Drive via</span>
+                  <p>
+                  2 South
+                  </p>
+                </div>
+                <div class="span1">
+                  <span class="label label-info">Total of</span>
+                  <p>
+                  55 min
+                  </p>
+                </div>
+                <div class="span1">
+                  <span class="label label-info">Last updated</span>
+                  <p>
+                    10:34
+                  </p>
+                </div>
+                <div class="span1">
+                  <span class="label label-success">Time2Go</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
