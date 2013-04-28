@@ -54,13 +54,13 @@
           <div class="row">
             <div class="span1">
               <span class="label label-info">Drive via</span>
-              <p>
+              <p class="route">
               2 South
               </p>
             </div>
             <div class="span1">
               <span class="label label-info">Total of</span>
-              <p>
+              <p class="eta">
               55 min
               </p>
             </div>
@@ -78,19 +78,19 @@
               <div class="control-group">
                 <label class="control-label">From:</label>
                 <div class="controls">
-                  <input type="text" placeholder="Your Location">
+                  <input id="fromAddress" type="text" placeholder="Your Location" value="כרם מהרל">
                 </div>
               </div>
               <div class="control-group">
                 <label class="control-label">To:</label>
                 <div class="controls">
-                  <input type="text" id='dest' placeholder="Destination"  style="margin: 0 auto;" 
+                  <input type="text" id='toAddress' placeholder="Destination"  value="אריה רגב 6, נתניה"  style="margin: 0 auto;" 
                    data-provide="typeahead" data-items="4"  data-source='["Alabama","Alaska","Arizona"]'</div>
               </div>
               <p>
               <div class="control-group">
                 <div class="controls">
-                  <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-controls-modal="myModal">
+                  <button type="submit" class="btn btn-primary" data-toggle="modal" data-controls-modal="myModal">
                     Go
                     <i class="icon-road icon-white"> </i>
                   </button>
@@ -102,24 +102,24 @@
           <div class="row">
             <div class="well time-to-destination">
               <h3>
-                Time to Destination:
+                Time to Destination
               </h3>
               <div class="row">
                 <div class="span1">
                   <span class="label label-info">Drive via</span>
-                  <p>
+                  <p class="route">
                   2 South
                   </p>
                 </div>
                 <div class="span1">
                   <span class="label label-info">Total of</span>
-                  <p>
+                  <p class="eta">
                   55 min
                   </p>
                 </div>
                 <div class="span1">
                   <span class="label label-info">Last updated</span>
-                  <p>
+                  <p class="updatedAt">
                   10:34
                   </p>
                 </div>
@@ -132,5 +132,20 @@
         </div>
       </div>
     </div>
+    <script language="javascript">
+    	$(".btn").click(function() {    	
+    		androidInterface.onGo($("#fromAddress").val(), $("#toAddress").val());
+    		//$("#myModal").modal();
+    	});
+    	
+        function onETA(eta, route, updatedAt) {
+        	alert(eta);
+        	$(".eta").text(eta);
+        	$(".route").text(route);
+        	$(".updatedAt").text(updatedAt);
+        	$(".time-to-destination").show();
+        	$("#myModal").modal();
+        }
+    </script>
   </body>
 </html>
