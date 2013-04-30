@@ -7,7 +7,7 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" >
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" >
     <link href="assets/stylesheets/application.css" rel="stylesheet" media="screen">
     <script src="assets/js/jquery-1.9.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
@@ -65,7 +65,14 @@
               </p>
             </div>
           </div>
-          Too long? notify me when time goes below <input id="maxDrivingTime" type="number" placeholder="minutes">
+          <div class="row">
+            <h5 class="span1">
+              Too long?
+            </h5>
+            <div class="span5">
+              Notify me when time goes below <input id="maxDrivingTime" type="number" class="span1"> minutes
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button id="notify" class="btn btn-primary" data-dismiss="modal" aria-hide="true">Notify<i class="icon-bell icon-white"> </i>
@@ -132,37 +139,37 @@
     </div>
     <script language="javascript">
         var androidInterface = androidInterface || null; 
-        $("#notify").click(function() {    	
-    		if (androidInterface != null) {
-    			androidInterface.onNotify($("#maxDrivingTime").val());
-    		}		
-    	});
-    	
-    	$("#go").click(function() {    	
-    		if (androidInterface != null) {
-    			androidInterface.onGo($("#fromAddress").val(), $("#toAddress").val());
-    		} else {
-    			$("#myModal").modal();
-    		}    		
-    	});
-    	
+        $("#notify").click(function() {     
+            if (androidInterface != null) {
+                androidInterface.onNotify($("#maxDrivingTime").val());
+            }       
+        });
+        
+        $("#go").click(function() {     
+            if (androidInterface != null) {
+                androidInterface.onGo($("#fromAddress").val(), $("#toAddress").val());
+            } else {
+                $("#myModal").modal();
+            }           
+        });
+        
         function onDrivingTime(drivingTime, route, updatedAt) {
-        	$(".drivingTime").text(drivingTime);
-        	$(".route").text(route);
-        	$(".updatedAt").text(updatedAt);
-        	$("#myModal").modal();
+            $(".drivingTime").text(drivingTime);
+            $(".route").text(route);
+            $(".updatedAt").text(updatedAt);
+            $("#myModal").modal();
         }
         
         function onUpdate(drivingTime, route, updatedAt) {
             $(".time-to-destination").show();
-        	$(".drivingTime").text(drivingTime);
-        	$(".route").text(route);
-        	$(".updatedAt").text(updatedAt);
+            $(".drivingTime").text(drivingTime);
+            $(".route").text(route);
+            $(".updatedAt").text(updatedAt);
         }
         
          function onTimeToGo(drivingTime, route, updatedAt) {
-        	onUpdate(drivingTime, route, updatedAt);
-        	$("#time2go").show();
+            onUpdate(drivingTime, route, updatedAt);
+            $("#time2go").show();
         }
 
     </script>
