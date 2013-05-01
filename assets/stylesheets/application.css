@@ -26,3 +26,10 @@ body {
 .modal-body {
    text-align: center;
 }
+#maxDrivingTime{
+    width: 80px;
+}
+
+.spinner {
+	margin-top: -8px;
+}
