@@ -7,7 +7,7 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" >
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" >
     <link href="assets/stylesheets/application.css" rel="stylesheet" media="screen">
     <script src="assets/js/jquery-1.9.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
@@ -66,10 +66,17 @@
               </p>
             </div>
           </div>
-          Too long? notify me when time goes below 
-		  <button id="plus" class="spinner btn btn-inverse btn-large"><i class="icon-white icon-plus"></i></button>
-          <input id="maxDrivingTime" type="number" placeholder="minutes">
-          <button id="minus" class="spinner btn btn-inverse btn-large"><i class="icon-white icon-minus"></i></button>
+          <div class="row">
+            <h5 class="span1">
+              Too long?
+            </h5>
+            <div class="span5">
+              Notify me when time goes below 
+              <button id="plus" class="spinner btn btn-inverse btn-small"><i class="icon-white icon-plus"></i></button>
+              <input id="maxDrivingTime" type="number" class="span1"> minutes
+              <button id="minus" class="spinner btn btn-inverse btn-small"><i class="icon-white icon-minus"></i></button>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button id="notify" class="btn btn-primary" data-dismiss="modal" aria-hide="true">
@@ -148,7 +155,6 @@
     		if (androidInterface != null) {
     			androidInterface.onGo($("#fromAddress").val(), $("#toAddress").val());
     		} else {
-    			$("#maxDrivingTime").val(99);
     			$("#myModal").modal();
     		}    		
     	});
@@ -168,14 +174,14 @@
         
         function onUpdate(drivingTime, route, updatedAt) {
             $(".time-to-destination").show();
-        	$(".drivingTime").text(drivingTime);
-        	$(".route").text(route);
-        	$(".updatedAt").text(updatedAt);
+            $(".drivingTime").text(drivingTime);
+            $(".route").text(route);
+            $(".updatedAt").text(updatedAt);
         }
         
          function onTimeToGo(drivingTime, route, updatedAt) {
-        	onUpdate(drivingTime, route, updatedAt);
-        	$("#time2go").show();
+            onUpdate(drivingTime, route, updatedAt);
+            $("#time2go").show();
         }
 
     </script>
