@@ -7,18 +7,10 @@ angular.module('timeToGo.controllers', []);
 angular.module('timeToGo.directives', []);
 angular.module('timeToGo.controllers.mock', []);
 
-var fromAndroiad = {
-  onCurrentLocation: function(lat, lng) {
-    var scope = angular.element($(".container")[0]).scope();
-    scope.safeApply(function(){ 
-      scope.currentLocation = {"lat":lat, "lng":lng}; 
-    });
-  }
-};
 
-var moreServices = ( (typeof androidInterface !== 'undefined') && false) ? ['timeToGo.services.Backend','timeToGo.services.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'] : ['timeToGo.services.mock.Backend', 'timeToGo.services.mock.GeoLocationForAddressService','timeToGo.services.mock.AddressForGeoLocationService'];
+var moreServices = ( (typeof androidInterface !== 'undefined') && false) ? ['timeToGo.services.Backend','timeToGo.services.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'] : ['timeToGo.services.mock.Backend', 'timeToGo.services.mock.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'];
 var angularCoreServices = ['ngRoute'];
-
+var Application = {};
 var timeToGoApp = angular.module('timeToGo', 
   ['timeToGo.controllers', 'timeToGo.directives', 'timeToGo.controllers.mock',
   'timeToGo.services.HistoryService', 'timeToGo.services.localStorageService',
@@ -52,6 +44,8 @@ $rootScope.safeApply = function(fn) {
 };
 
 
+
+
  // $rootScope.fromAndroiad = fromAndroiad;
 
 
@@ -78,5 +72,40 @@ $rootScope.safeApply = function(fn) {
     // },
   // };
 
+  Application = {
+    onCreate: function() {
+        console.log("on onCreate");
+    },
+    onStart: function() {
+      console.log("on Start");
+    },
+    onResume: function() {
+      console.log("on onResume");
+    },
+    onPause: function() {
+      console.log("on Pause");
+    },
+    updateUI: function(maxDrivingTime, routeName, lastUpdated) {
+      console.log(sprintf("on updateUI with maxDrivingTime=%(maxDrivingTime)s routeName=%(routeName)s", 
+        maxDrivingTime, routeName);
+    },
+    onTimeToGo: function(maxDrivingTime, routeName, lastUpdated) {
+      console.log(sprintf("on onTimeToGo with maxDrivingTime=%(maxDrivingTime)s routeName=%(routeName)s", 
+        maxDrivingTime, routeName);
+    },
+    onDrivingTime: function(maxDrivingTime) {
+      console.log(sprintf("on onDrivingTime with maxDrivingTime = %(maxDrivingTime)s", maxDrivingTime);
+    },
+    onCurrentLocation: function(geoLocation) {
+
+      console.log("onCurrentLocation "+geoLocation.lat+" / "+geoLocation.lng);
+      $rootScope.safeApply(function(){ 
+        $rootScope.currentLocation = geoLocation; 
+      });
+    }
+  };
 });
+
+
+
 

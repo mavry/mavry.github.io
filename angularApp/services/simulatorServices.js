@@ -24,7 +24,7 @@ factory('simulatorService', function($rootScope){
     },
     onCurrentLocation: function(lat, lng) {
       console.log("onCurrentLocation "+lat+" / "+lng);
-      fromAndroiad.onCurrentLocation({"lat":lat, "lng":lng});
+      window.Application.onCurrentLocation({"lat":lat, "lng":lng});
     }
   } 
 });

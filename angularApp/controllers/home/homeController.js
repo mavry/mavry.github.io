@@ -31,7 +31,7 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
   	  if (JSON.stringify(newVal)==JSON.stringify(oldVal)) return;
       console.log("location changed " + JSON.stringify(oldVal)+" --> "+JSON.stringify(newVal));
       $scope.onCurrentLocation(newVal);
-    });
+    }, true);
 
 	(function() { $scope.init(); })();
 
@@ -41,8 +41,8 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	}
 
 	$scope.startLocationBlur = function(){
-      $scope.inStartLocationField = false;
-      $rootScope.doBack = null;
+      // $scope.inStartLocationField = false;
+      // $rootScope.doBack = null;
 	}
 
 	$scope.destinationLocationFocus = function(){
@@ -51,8 +51,8 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	}
 
 	$scope.destinationLocationBlur = function(){
-      $scope.inDestinationLocationField = false;
-      $rootScope.doBack = null;
+      // $scope.inDestinationLocationField = false;
+      // $rootScope.doBack = null;
 	}
 
 
