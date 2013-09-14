@@ -6,6 +6,10 @@ body {
   background-size: cover;
 }
 
+.loadinggif {
+    background:url('../images/ajax-loader.gif') no-repeat right center;
+}
+
 .content{
   padding-top: 20px;
 }
@@ -24,14 +28,6 @@ body {
     text-align: center;
 }
 
-#maxDrivingTime{
-  width: 40px;
-  margin: 0;
-}
-
-#notify{
-  margin-top: 1em;
-}
 
 #maxDrivingTime{
   width: 40px;
