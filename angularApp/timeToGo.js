@@ -9,7 +9,8 @@ angular.module('timeToGo.directives', []);
 angular.module('timeToGo.controllers.mock', []);
 
 
-var moreServices = ( (typeof androidInterface !== 'undefined') && false) ? ['timeToGo.services.Backend','timeToGo.services.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'] : ['timeToGo.services.mock.Backend', 'timeToGo.services.mock.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'];
+//var moreServices = ( (typeof androidInterface !== 'undefined') && false) ? ['timeToGo.services.Backend','timeToGo.services.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'] : ['timeToGo.services.mock.Backend', 'timeToGo.services.mock.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'];
+var moreServices = ['timeToGo.services.mock.Backend', 'timeToGo.services.mock.GeoLocationForAddressService','timeToGo.services.AddressForGeoLocationService'];
 var angularCoreServices = ['ngRoute'];
 var Application = {};
 var timeToGoApp = angular.module('timeToGo', 
