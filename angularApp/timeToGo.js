@@ -73,7 +73,6 @@ var Application = {
       console.log(sprintf("on onDrivingTime with maxDrivingTime = %(maxDrivingTime)s", maxDrivingTime));
     },
     onCurrentLocation: function(geoLocation) {
-
       console.log("onCurrentLocation "+geoLocation.lat+" / "+geoLocation.lng);
       ROOT.safeApply(function(){ 
         ROOT.currentLocation = geoLocation; 
