@@ -7,11 +7,9 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	var data;
 
 	$scope.pollForLocation = function() {
-	  console.log("pollForLocation from backed");
 	  var currentLocation =  $.parseJSON(Backend.getLocation());
-	  console.log("pollForLocation got location "+JSON.stringify(currentLocation));
 	  $scope.onCurrentLocation(currentLocation);
-	  // $timeout($scope.pollForLocation, 1000);
+	  $timeout($scope.pollForLocation, 1000);
 	};
 
 
@@ -30,21 +28,22 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	    currentLocation: {
 	      location: null,
 	      hasLocation: false,
-	      lastUpdated: null
+	      lastUpdated: null,
+	      accuracy: -1,
 	    }
 	  };
 	  $rootScope.data = data;	
-	  // $timeout($scope.pollForLocation, 20000);
+	  $timeout($scope.pollForLocation, 20000);
 	};
 
 
 
 
-	$scope.$watch("currentLocation", function(newVal, oldVal){
-  	  if (JSON.stringify(newVal)==JSON.stringify(oldVal)) return;
-      console.log("location changed " + JSON.stringify(oldVal)+" --> "+JSON.stringify(newVal));
-      $scope.onCurrentLocation(newVal);
-    }, true);
+	// $scope.$watch("currentLocation", function(newVal, oldVal){
+ //  	  if (JSON.stringify(newVal)==JSON.stringify(oldVal)) return;
+ //      console.log("location changed " + JSON.stringify(oldVal)+" --> "+JSON.stringify(newVal));
+ //      $scope.onCurrentLocation(newVal);
+ //    }, true);
 
 	(function() { $scope.init(); })();
 

@@ -9,13 +9,10 @@ angular.module('timeToGo.services.mock.Backend', []).service('Backend', function
         // }, 3000);
     },
 
-    // getLocation: function() {
-    //   return JSON.stringify($rootScope.mockData.currentLocation);
-    // },
     getLocation: function() {
-      console.log("Backend.getLocation using oject "+androidInterface);
-      return androidInterface.getLocation();
+       return JSON.stringify($rootScope.mockData.currentLocation);
     },
+
 
     onNotify: function (maxDrivingTime) {
       // $timeout(function() {
