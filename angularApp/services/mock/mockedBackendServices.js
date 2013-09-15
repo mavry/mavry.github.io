@@ -13,7 +13,7 @@ angular.module('timeToGo.services.mock.Backend', []).service('Backend', function
     //   return JSON.stringify($rootScope.mockData.currentLocation);
     // },
     getLocation: function() {
-      console.log("Backend.getLocation");
+      console.log("Backend.getLocation using oject "+androidInterface);
       return androidInterface.getLocation();
     },
 
