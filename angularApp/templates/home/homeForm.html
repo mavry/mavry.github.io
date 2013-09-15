@@ -6,11 +6,11 @@
         ng-class="{loadinggif : waitingForLocation}" ng-focus="startLocationFocus()" ng-blur="startLocationBlur()" googleplace > 
         <div > <!-- ng-show="inStartLocationField" > -->
           <div ng-show="!data.currentLocation.hasLocation" class="noCurrentLocation" ng-click="useCurrentLocation()" >
-             Obtaining current Location
+             Obtaining current Location _
              <img src="images/locationIndicator.png" />
           </div>
           <div  ng-show="data.currentLocation.hasLocation"  ng-click="useCurrentLocation()" >
-              Use Current Location {{data.currentLocation.address }}  @ {{data.currentLocation.location.accuracy}} m
+              Use Current Location _ {{data.currentLocation.address }} @ {{data.currentLocation.location.accuracy}} m
               <img src="images/locationIndicator.png" />
           </div>
         </div>
