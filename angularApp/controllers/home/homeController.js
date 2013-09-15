@@ -33,7 +33,7 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	    }
 	  };
 	  $rootScope.data = data;	
-	  $timeout($scope.pollForLocation, 20000);
+	  $timeout($scope.pollForLocation, 1000);
 	};
 
 
