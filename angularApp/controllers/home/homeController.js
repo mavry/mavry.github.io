@@ -7,7 +7,10 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	var data;
 
 	$scope.pollForLocation = function() {
-	  var currentLocation =  $.parseJSON(Backend.getLocation());
+	  console.log("poll for location");
+	  var locAsStrng = Backend.getLocation();
+	  console.log("got location: "+locAsStrng)
+	  var currentLocation = $.parseJSON(locAsStrng);
 	  $scope.onCurrentLocation(currentLocation);
 	  $timeout($scope.pollForLocation, 1000);
 	};
