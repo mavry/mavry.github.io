@@ -2,9 +2,17 @@
 
 /* Controllers */
 
-angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope, $rootScope, $location, Backend, HistoryService, GeoLocationForAddressService, AddressForGeoLocationService) {	
+angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope, $rootScope, $location, Backend, HistoryService, GeoLocationForAddressService, AddressForGeoLocationService, $timeout) {	
 
 	var data;
+
+	$scope.pollForLocation = function() {
+	  console.log("pollForLocation from backed");
+	  var currentLocation =  $.parseJSON(Backend.getLocation());
+	  console.log("pollForLocation got location "+JSON.stringify(currentLocation));
+	  $scope.onCurrentLocation(currentLocation);
+	  $timeout($scope.pollForLocation, 1000);
+	};
 
 	$scope.init = function() {
 	  $scope.gPlace="";
@@ -24,7 +32,10 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	    }
 	  };
 	  $rootScope.data = data;	
+	  $timeout($scope.pollForLocation, 1000);
 	};
+
+
 
 
 	$scope.$watch("currentLocation", function(newVal, oldVal){

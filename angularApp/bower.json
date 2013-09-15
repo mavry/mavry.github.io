@@ -1,18 +1,14 @@
 {
-  "name": "ttg",
-  "version": "0.0.1",
-  "main": "timeToGo.html",
+  "name": "campaign settings",
+  "version": "trunk",
+  "main": "app.html",
   "ignore": [
     ".jshintrc",
     "**/*.txt"
   ],
   "dependencies": {
-    "angular": "1.2.0-rc.2",
-    "angular-route": "1.2.0-rc.2",
-    "jquery": "1.10.2",
-    "bootstrap": "v3.0.0",
-    "sprintf": "git://github.com/alexei/sprintf.js.git",
-    "momentjs": "2.2.1"
+    "angular": "v1.1.5",
+    "momentjs": "2.0.0"
   },
   "devDependencies": {
   }
