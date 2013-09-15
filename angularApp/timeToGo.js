@@ -49,7 +49,23 @@ timeToGoApp.config(function($routeProvider ) {
 });
 
 
-var Application = {
+window.Application = {
+
+  inititialize: function () {
+    var self = this;
+    if (typeof androidInterface !== 'undefined' ) {
+      console.log("we are in PROD");
+      self.androidInterface = androidInterface;
+    }
+    else
+    {
+      console.log("we are in simulator");
+      self.androidInterface = mockedAndroidInterface;
+    }    
+    console.log("after init");
+  },
+
+
     onCreate: function() {
         console.log("on onCreate");
     },
@@ -80,6 +96,4 @@ var Application = {
       });
     }
   };
-
-
-
+window.Application.inititialize();
