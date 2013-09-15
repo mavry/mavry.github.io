@@ -9,8 +9,8 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	$scope.pollForLocation = function() {
 	  console.log("poll for location");
 	  var locAsStrng = Backend.getLocation();
-	  if (locAsStrng === undefined) {
-	  		  console.log("*** got location: undefined");
+	  if (typeof locAsStrng === "undefined") {
+	    console.log("*** got location: undefined");
 	  }
 	  else {
 	  	console.log("got location: "+locAsStrng)
