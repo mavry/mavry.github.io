@@ -54,15 +54,16 @@ window.Application = {
   inititialize: function () {
     var self = this;
     if (typeof androidInterface !== 'undefined' ) {
-      console.log("we are in PROD");
       self.androidInterface = androidInterface;
+      console.log("we are in PROD");
+
     }
     else
     {
       console.log("we are in simulator");
       self.androidInterface = mockedAndroidInterface;
     }    
-    console.log("after init");
+    console.log("after init androidInterface=::: "+JSON.stringify(self.androidInterface));
   },
 
 
