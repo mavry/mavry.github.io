@@ -16,7 +16,7 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	  	console.log("got location: "+locAsStrng)
 	  	var currentLocation = $.parseJSON(locAsStrng);
 	  	$scope.onCurrentLocation(currentLocation);
-	  	// $timeout($scope.pollForLocation, 1000);
+	  	$timeout($scope.pollForLocation, 1000);
 	  }
 	};
 
@@ -41,7 +41,7 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	    }
 	  };
 	  $rootScope.data = data;	
-	  // $timeout($scope.pollForLocation, 1000);
+	  $timeout($scope.pollForLocation, 1000);
 	};
 
 
