@@ -8,16 +8,15 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 
 	$scope.pollForLocation = function() {
 	  console.log("poll for location");
-	  var locAsStrng = Backend.getLocation();
-	  if (typeof locAsStrng === "undefined") {
-	    console.log("*** got location: undefined");
-	  }
-	  else {
-	  	console.log("got location: "+locAsStrng)
-	  	var currentLocation = $.parseJSON(locAsStrng);
-	  	$scope.onCurrentLocation(currentLocation);
-	  	$timeout($scope.pollForLocation, 1000);
-	  }
+	  Backend.getLocation();
+	  // if (typeof locAsStrng === "undefined") {
+	  //   console.log("*** got location: undefined");
+	  // }
+	  // else {
+	  // 	console.log("got location: "+locAsStrng)
+	  // 	var currentLocation = $.parseJSON(locAsStrng);
+	  // 	$scope.onCurrentLocation(currentLocation);
+	  // }
 	};
 
 
@@ -41,7 +40,6 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	    }
 	  };
 	  $rootScope.data = data;	
-	  $timeout($scope.pollForLocation, 5000);
 	};
 
 

@@ -1,4 +1,4 @@
-angular.module('timeToGo.services.localStorageService', []).
+angular.module('timeToGo.services.SimulatorService', []).
 factory('simulatorService', function($rootScope){
   return {
     onCreate: function() {

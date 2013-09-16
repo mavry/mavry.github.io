@@ -13,8 +13,9 @@ var moreServices = (typeof androidInterface !== 'undefined' ) ? ['timeToGo.servi
 var angularCoreServices = ['ngRoute'];
 var Application = {};
 var timeToGoApp = angular.module('timeToGo', 
-  ['timeToGo.controllers', 'timeToGo.directives', 'timeToGo.controllers.mock',
-  'timeToGo.services.HistoryService', 'timeToGo.services.localStorageService',
+  ['LocalStorageModule', 'timeToGo.controllers', 'timeToGo.directives', 'timeToGo.controllers.mock',
+    'timeToGo.services.SimulatorService',
+  'timeToGo.services.HistoryService',
   ].concat(moreServices).concat(angularCoreServices) );
 
 timeToGoApp.value('prefix', 'timeToGo');

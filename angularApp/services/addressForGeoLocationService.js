@@ -1,3 +1,4 @@
+/*global angular, sprintf */
 angular.module('timeToGo.services.AddressForGeoLocationService', []).
 service('AddressForGeoLocationService', function($http){
   return {
@@ -10,5 +11,5 @@ service('AddressForGeoLocationService', function($http){
         callback(address);
       });
     }
-  }
+  };
 });
