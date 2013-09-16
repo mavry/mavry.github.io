@@ -15,7 +15,7 @@ service('Backend', function() {
 	},
       getLocation: function() {
 		console.log("Backend.getLocation");
-		return androidInterface.getLocation();
+		androidInterface.getLocation();
       }
 	};
 });
