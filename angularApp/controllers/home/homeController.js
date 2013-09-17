@@ -45,11 +45,11 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 
 
 
-	// $scope.$watch("currentLocation", function(newVal, oldVal){
- //  	  if (JSON.stringify(newVal)==JSON.stringify(oldVal)) return;
- //      console.log("location changed " + JSON.stringify(oldVal)+" --> "+JSON.stringify(newVal));
- //      $scope.onCurrentLocation(newVal);
- //    }, true);
+	 $scope.$watch("currentLocation", function(newVal, oldVal){
+   	  if (JSON.stringify(newVal)==JSON.stringify(oldVal)) return;
+       console.log("@@ location changed " + JSON.stringify(oldVal)+" --> "+JSON.stringify(newVal));
+       $scope.onCurrentLocation(newVal);
+     }, true);
 
 	(function() { $scope.init(); })();
 
@@ -80,7 +80,7 @@ angular.module('timeToGo.controllers'). controller('HomeCtrl',  function ($scope
 	}
 
 	$scope.onCurrentLocation = function(geoLocation) {
-	  console.log("in onCurrentLocation()");
+	  console.log("@@ in onCurrentLocation()");
 	  $scope.data.currentLocation.lastUpdated = moment();
       $scope.data.currentLocation.location=geoLocation;
       $scope.data.currentLocation.hasLocation = true;
