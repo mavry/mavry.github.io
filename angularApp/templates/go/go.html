@@ -1,7 +1,13 @@
 <div class="container" >
-	<div class='section'  ng-include="'templates/nav/navigationBar.html'">
-	</div>
-	<div class='section'>
-		Go now! - you will get to destination at {{go.arivalTime}} in {{go.travelTime}} min
-	</div>
+  <div class='section'  ng-include="'templates/nav/navigationBar.html'">
+  </div>
+  <div class='section'>
+    Go now! via {{data.go.routeName}}- you will get to {{data.locations.destinationLocation.address}} in  {{data.go.drivingTime}} min (at {{data.go.eta}})
+  </div>
+  <div class='section'>
+    Start Driving: <img ng-click='openWaze()' src='images/waze-logo.jpg'>
+  </div>
+  <div class='section'>
+    <a href='' ng-click="reset()">reset</a>
+  </div>
 </div> <!-- /container -->

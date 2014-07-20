@@ -1,0 +1,14 @@
+bin
+*.log
+target
+gen
+lint.xml
+.idea
+TimeToGo.iml
+build.log
+build-log.xml
+out/
+gen-external-apklibs/
+node_modules
+bower_components
+node_modules
