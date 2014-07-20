@@ -90,9 +90,6 @@ $scope.isSubmitDisabled = function() {
     (
       ($scope.data.locations.destinationLocation.address !== null &&  $scope.data.locations.destinationLocation.address.length > 3 ) && ( (   $scope.data.locations.startLocation.address !== null && $scope.data.locations.startLocation.address.length > 3 ) || $scope.data.currentLocation.requested === true )
     );
-  console.log("$scope.data.locations.destinationLocation.address "+$scope.data.locations.destinationLocation.address);
-  console.log("enabled = "+enabled);
-
   return !enabled;
 };
 
