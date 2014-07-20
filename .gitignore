@@ -10,5 +10,3 @@ build-log.xml
 out/
 gen-external-apklibs/
 node_modules
-bower_components
-node_modules
