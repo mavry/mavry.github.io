@@ -19,28 +19,30 @@ service('HistoryService', function ($rootScope, localStorageService) {
             localStorageService.add('history', $rootScope.history);
         },
         add: function (address) {
-            if (address === null) {
-                return;
+          if (address === null) {
+            return;
+          }
+          for (var i in $rootScope.history.list) {
+            if ($rootScope.history.list.hasOwnProperty(i)) {
+              var item = $rootScope.history.list[i];
+              if (item.name === address) {
+                item.usedAt = moment();
+                sort($rootScope.history.list);
+                localStorageService.add('history', $rootScope.history);
+                return this;
+              }
             }
-            for (var i in $rootScope.history.list) {
-                var item = $rootScope.history.list[i];
-                if (item.name === address) {
-                    item.usedAt = moment();
-                    sort($rootScope.history.list);
-                    localStorageService.add('history', $rootScope.history);
-                    return this;
-                }
-            }
-            var hisItem = {
-                name: address,
-                usedAt: moment(),
-                createdAt: moment(),
-            };
+          }
+          var hisItem = {
+            name: address,
+            usedAt: moment(),
+            createdAt: moment(),
+          };
 
-            $rootScope.history.list.push(hisItem);
-            sort($rootScope.history.list);
-            localStorageService.add('history', $rootScope.history);
-            return this;
+          $rootScope.history.list.push(hisItem);
+          sort($rootScope.history.list);
+          localStorageService.add('history', $rootScope.history);
+          return this;
         }
     };
 });
